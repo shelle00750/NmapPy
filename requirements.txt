@@ -1,4 +1,4 @@
-pip install table
-pip install tabulate
-pip install terminaltables
-pip install getmac
+table
+tabulate
+terminaltables
+getmac
