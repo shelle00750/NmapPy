@@ -93,30 +93,30 @@ def main():
 				    if target_ip == "a":
 
 					gatewayip = gateway
-					gtway = open('/opt/nmappy/tmp/gateway.txt', 'w')
+					gtway = open('./tmp/gateway.txt', 'w')
 					gtway.write(gatewayip)
 					gtway.close()
 				
 					network_blocks = raw_input("\033[1;36m[!] Enter network blocks,example.\033[1;36m(\033[1;mip address\033[1;36m/\033[1;m24 \033[1;36mor\033[1;m 16 \033[1;36mor\033[1;m 8\033[1;36m)»\033[1;m%s\033[1;36m/\033[1;m"% gateway).strip()
 
-					networkb = open('/opt/nmappy/tmp/network_blocks.txt', 'w')
+					networkb = open('./tmp/network_blocks.txt', 'w')
 					networkb.write(network_blocks)
 					networkb.close()
 				
 					t_port= raw_input("\033[1;36m[!] Enter Ports for scanning,example:\033[1;36m(\033[1;m21,22,23,139,xx\033[1;36m):\033[1;m").strip()
-					ports = open('/opt/nmappy/tmp/ports.txt', 'w')
+					ports = open('./tmp/ports.txt', 'w')
 					ports.write(t_port)
 					ports.close()
 
 					print("\033[1;91mMapping...\033[1;m")
 
 					scan = os.popen("sh ./nmap").read()
-					f = open('/opt/nmappy/tmp/mapgrepscan.txt','w')
+					f = open('./tmp/mapgrepscan.txt','w')
 					f.write(scan)
 					f.close()
 				
-					ip_addre = os.popen("grep UP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $1}'").read()
-					ports = os.popen("grep TCP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $3}'").read()
+					ip_addre = os.popen("grep UP ./tmp/mapgrepscan.txt | awk '{print $1}'").read()
+					ports = os.popen("grep TCP ./tmp/mapgrepscan.txt | awk '{print $3}'").read()
 		
 					table = [['IP Address','Ports']]
 					table.append([ip_addre,ports])
@@ -148,29 +148,29 @@ def main():
 					target_ip = raw_input("\033[1;36m[!] Enter ip address for scanning,example:\033[1;36m(\033[1;m192.168.x.0\033[1;36m):\033[1;m").strip()
 				    
 					gatewayip = target_ip
-					gtway = open('/opt/nmappy/tmp/gateway.txt', 'w')
+					gtway = open('./tmp/gateway.txt', 'w')
 					gtway.write(gatewayip)
 					gtway.close()
 				
 					network_blocks = raw_input("\033[1;36m[!] Enter network blocks,example.\033[1;36m(\033[1;mip address\033[1;36m/\033[1;m24 \033[1;36mor\033[1;m 16 \033[1;36mor\033[1;m 8\033[1;36m)»\033[1;m%s\033[1;36m/\033[1;m" % target_ip).strip()
-					networkb = open('/opt/nmappy/tmp/network_blocks.txt', 'w')
+					networkb = open('./tmp/network_blocks.txt', 'w')
 					networkb.write(network_blocks)
 					networkb.close()
 				
 					t_port= raw_input("\033[1;36m[!] Enter Ports for scanning,example:\033[1;36m(\033[1;m21,22,23,139,xx\033[1;36m):\033[1;m").strip()
-					ports = open('/opt/nmappy/tmp/ports.txt', 'w')
+					ports = open('./tmp/ports.txt', 'w')
 					ports.write(t_port)
 					ports.close()
 				    
 					print("\033[1;91mMapping...\033[1;m")
 
 					scan = os.popen("sh ./nmap").read()
-					f = open('/opt/nmappy/tmp/mapgrepscan.txt','w')
+					f = open('./tmp/mapgrepscan.txt','w')
 					f.write(scan)
 					f.close()
 				
-					ip_addre = os.popen("grep UP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $1}'").read()
-					ports = os.popen("grep TCP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $3}'").read()
+					ip_addre = os.popen("grep UP ./tmp/mapgrepscan.txt | awk '{print $1}'").read()
+					ports = os.popen("grep TCP ./tmp/mapgrepscan.txt | awk '{print $3}'").read()
 		
 					table = [['IP Address','Ports']]
 					table.append([ip_addre,ports])
@@ -214,25 +214,25 @@ def main():
 				if target_ip == "a":
 				    
 				    gatewayip = gateway
-				    gtway = open('/opt/nmappy/tmp/gateway.txt', 'w')
+				    gtway = open('./tmp/gateway.txt', 'w')
 				    gtway.write(gatewayip)
 				    gtway.close()
 				
 				    network_blocks = raw_input("\033[1;36m[!] Enter network blocks,example.\033[1;36m(\033[1;mip address\033[1;36m/\033[1;m24 \033[1;36mor\033[1;m 16 \033[1;36mor\033[1;m 8\033[1;36m)»\033[1;m%s\033[1;36m/\033[1;m"% gateway).strip()
 
-				    networkb = open('/opt/nmappy/tmp/network_blocks.txt', 'w')
+				    networkb = open('./tmp/network_blocks.txt', 'w')
 				    networkb.write(network_blocks)
 				    networkb.close()
 
 				    print("\033[1;91mMapping...\033[1;m")
 
 				    scan = os.popen("sh ./nmapdb").read()
-				    f = open('/opt/nmappy/tmp/mapgrepscan.txt','w')
+				    f = open('./tmp/mapgrepscan.txt','w')
 				    f.write(scan)
 				    f.close()
 				
-				    ip_addre = os.popen("grep UP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $1}'").read()
-				    ports = os.popen("grep TCP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $3}'").read()
+				    ip_addre = os.popen("grep UP ./tmp/mapgrepscan.txt | awk '{print $1}'").read()
+				    ports = os.popen("grep TCP ./tmp/mapgrepscan.txt | awk '{print $3}'").read()
 		
 				    table = [['IP Address','Ports']]
 				    table.append([ip_addre,ports])
@@ -304,24 +304,24 @@ def main():
 				    #targetip = target_ip
 				    
 				    gatewayip = target_ip
-				    gtway = open('/opt/nmappy/tmp/gateway.txt', 'w')
+				    gtway = open('./tmp/gateway.txt', 'w')
 				    gtway.write(gatewayip)
 				    gtway.close()
 				
 				    network_blocks = raw_input("\033[1;36m[!] Enter network blocks,example.\033[1;36m(\033[1;mip address\033[1;36m/\033[1;m24 \033[1;36mor\033[1;m 16 \033[1;36mor\033[1;m 8\033[1;36m)»\033[1;m%s\033[1;36m/\033[1;m" % target_ip).strip()
-				    networkb = open('/opt/nmappy/tmp/network_blocks.txt', 'w')
+				    networkb = open('./tmp/network_blocks.txt', 'w')
 				    networkb.write(network_blocks)
 				    networkb.close()
 
 				    print("\033[1;91mMapping...\033[1;m")
 
 				    scan = os.popen("sh ./nmapdb").read()
-				    f = open('/opt/nmappy/tmp/mapgrepscan.txt','w')
+				    f = open('./tmp/mapgrepscan.txt','w')
 				    f.write(scan)
 				    f.close()
 				
-				    ip_addre = os.popen("grep UP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $1}'").read()
-				    ports = os.popen("grep TCP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $3}'").read()
+				    ip_addre = os.popen("grep UP ./tmp/mapgrepscan.txt | awk '{print $1}'").read()
+				    ports = os.popen("grep TCP ./tmp/mapgrepscan.txt | awk '{print $3}'").read()
 		
 				    table = [['IP Address','Ports']]
 				    table.append([ip_addre,ports])
@@ -406,25 +406,25 @@ def main():
 				if target_ip == "a":
 				    
 				    gatewayip = gateway
-				    gtway = open('/opt/nmappy/tmp/gateway.txt', 'w')
+				    gtway = open('./tmp/gateway.txt', 'w')
 				    gtway.write(gatewayip)
 				    gtway.close()
 				
 				    network_blocks = raw_input("\033[1;36m[!] Enter network blocks,example.\033[1;36m(\033[1;mip address\033[1;36m/\033[1;m24 \033[1;36mor\033[1;m 16 \033[1;36mor\033[1;m 8\033[1;36m)»\033[1;m%s\033[1;36m/\033[1;m"% gateway).strip()
 
-				    networkb = open('/opt/nmappy/tmp/network_blocks.txt', 'w')
+				    networkb = open('./tmp/network_blocks.txt', 'w')
 				    networkb.write(network_blocks)
 				    networkb.close()
 
 				    print("\033[1;91mMapping...\033[1;m")
 
 				    scan = os.popen("sh ./nmaptrojan").read()
-				    f = open('/opt/nmappy/tmp/mapgrepscan.txt','w')
+				    f = open('./tmp/mapgrepscan.txt','w')
 				    f.write(scan)
 				    f.close()
 				
-				    ip_addre = os.popen("grep UP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $1}'").read()
-				    ports = os.popen("grep TCP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $3}'").read()
+				    ip_addre = os.popen("grep UP ./tmp/mapgrepscan.txt | awk '{print $1}'").read()
+				    ports = os.popen("grep TCP ./tmp/mapgrepscan.txt | awk '{print $3}'").read()
 		
 				    table = [['IP Address','Ports']]
 				    table.append([ip_addre,ports])
@@ -674,24 +674,24 @@ def main():
 				    target_ip= raw_input("\033[1;36m[!] Enter ip address for scanning,example:\033[1;36m(\033[1;m192.168.x.0\033[1;36m):\033[1;m").strip()
 
 				    gatewayip = target_ip
-				    gtway = open('/opt/nmappy/tmp/gateway.txt', 'w')
+				    gtway = open('./tmp/gateway.txt', 'w')
 				    gtway.write(gatewayip)
 				    gtway.close()
 				
 				    network_blocks = raw_input("\033[1;36m[!] Enter network blocks,example.\033[1;36m(\033[1;mip address\033[1;36m/\033[1;m24 \033[1;36mor\033[1;m 16 \033[1;36mor\033[1;m 8\033[1;36m)»\033[1;m%s\033[1;36m/\033[1;m" % target_ip).strip()
-				    networkb = open('/opt/nmappy/tmp/network_blocks.txt', 'w')
+				    networkb = open('./tmp/network_blocks.txt', 'w')
 				    networkb.write(network_blocks)
 				    networkb.close()
 
 				    print("\033[1;91mMapping...\033[1;m")
 
 				    scan = os.popen("sh ./nmaptrojan").read()
-				    f = open('/opt/nmappy/tmp/mapgrepscan.txt','w')
+				    f = open('./tmp/mapgrepscan.txt','w')
 				    f.write(scan)
 				    f.close()
 				
-				    ip_addre = os.popen("grep UP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $1}'").read()
-				    ports = os.popen("grep TCP /opt/nmappy/tmp/mapgrepscan.txt | awk '{print $3}'").read()
+				    ip_addre = os.popen("grep UP ./tmp/mapgrepscan.txt | awk '{print $1}'").read()
+				    ports = os.popen("grep TCP ./tmp/mapgrepscan.txt | awk '{print $3}'").read()
 		
 				    table = [['IP Address','Ports']]
 				    table.append([ip_addre,ports])
