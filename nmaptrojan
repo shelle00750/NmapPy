@@ -2,14 +2,14 @@
 #By shell.e00750..
 
 # get ip address for gateway.
-ip="tmp/gateway.txt"
+ip="/opt/nmappy/tools/files/gateway.txt"
 ipgateways=`cat $ip`
 for ip_gateway in $ipgateways; do
         echo "$ip_gateway"
 done
 
 # get network maps.
-n="tmp/network_blocks.txt"
+n="/opt/nmappy/tmp/network_blocks.txt"
 network_maps=`cat $n`
 for network_map in $network_maps; do
         echo "$network_map"
