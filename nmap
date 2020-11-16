@@ -9,7 +9,7 @@ for ip_gateway in $ipgateways; do
 done
 
 # get network maps.
-n="opt/nmappy/tmp/network_blocks.txt"
+n="/opt/nmappy/tmp/network_blocks.txt"
 network_maps=`cat $n`
 for network_map in $network_maps; do
         echo "$network_map"
